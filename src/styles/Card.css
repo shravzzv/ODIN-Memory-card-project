@@ -1,0 +1,26 @@
+.card {
+  border-radius: var(--common-bdr-radius);
+  box-shadow: var(--common-box-shadow);
+  height: 300px;
+  max-width: 100%;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+  .card {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
+}

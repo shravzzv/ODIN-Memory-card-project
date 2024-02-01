@@ -1,0 +1,82 @@
+/* This file contains variables, default element styles and classes for a mobile-first UI. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --txt-clr: #000;
+  --bg-clr: #fff;
+  --bg-clr-sec: rgb(240, 240, 240);
+  --common-bdr-radius: 8px;
+  --common-padding: 0.5em 1em;
+  --common-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --txt-clr: #fff;
+    --bg-clr: #242424;
+    --bg-clr-sec: #121212;
+  }
+}
+
+body {
+  color: var(--txt-clr);
+  background-color: var(--bg-clr);
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+button {
+  border-radius: var(--common-bdr-radius);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  transition: border-color 0.25s;
+  background-color: var(--bg-clr-sec);
+  color: inherit;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+  button {
+    cursor: pointer;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
+}

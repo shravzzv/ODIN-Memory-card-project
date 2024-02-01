@@ -1,0 +1,24 @@
+.gallery {
+  /* border: 1px solid #000; */
+  border-radius: var(--common-bdr-radius);
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
+}

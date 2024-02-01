@@ -1,0 +1,25 @@
+.scoreboard {
+  border-radius: var(--common-bdr-radius);
+  padding: var(--common-padding);
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--bg-clr-sec);
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
+}
