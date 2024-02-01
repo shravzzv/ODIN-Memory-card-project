@@ -1,0 +1,24 @@
+.scoreboard {
+  border: 1px solid #000;
+  border-radius: var(--common-bdr-radius);
+  padding: var(--common-padding);
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
+}
