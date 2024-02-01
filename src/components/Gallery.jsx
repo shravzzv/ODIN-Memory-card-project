@@ -5,18 +5,18 @@ import fisherYatesShuffle from '../utils/fisherYatesShuffle'
 
 export default function Gallery({ score, bestScore, setScore, setBestScore }) {
   const [images, setImages] = useState([])
-  const [clicked, setClicked] = useState([])
+  const [clickedIds, setClickedIds] = useState([])
 
   const handleClick = (e) => {
     const cardId = e.target.id
 
-    if (!clicked.includes(cardId)) {
+    if (!clickedIds.includes(cardId)) {
       setScore((prevScore) => prevScore + 1)
-      setClicked((prevData) => [...prevData, cardId])
+      setClickedIds((prevData) => [...prevData, cardId])
     } else {
       setScore(0)
       score > bestScore && setBestScore(score)
-      setClicked([])
+      setClickedIds([])
     }
 
     setImages((prevImages) => fisherYatesShuffle(prevImages))
