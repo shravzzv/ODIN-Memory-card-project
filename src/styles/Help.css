@@ -1,0 +1,66 @@
+.help {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.help button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  animation: slideLeft 300ms ease-in-out;
+  background-color: var(--bg-clr-sec);
+  border-radius: var(--common-bdr-radius);
+  box-shadow: var(--common-box-shadow);
+}
+
+.instructions p {
+  padding: 10px;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .help button {
+    background-color: var(--marvel-logo-red);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+  .instructions {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
+}
