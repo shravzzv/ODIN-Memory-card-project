@@ -1,0 +1,27 @@
+dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: var(--common-bdr-radius);
+  box-shadow: var(--common-box-shadow);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  border: none;
+  width: min(80vw, 700px);
+  text-align: center;
+  padding: 40px 0;
+  animation: growIn 300ms ease-in-out;
+  background-color: var(--bg-clr-sec);
+  color: inherit;
+}
+
+@keyframes growIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
