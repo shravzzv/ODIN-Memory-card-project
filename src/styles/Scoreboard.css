@@ -6,6 +6,16 @@
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: var(--bg-clr-sec);
+  margin-bottom: 20px;
+}
+
+.scoreboard p {
+  font-weight: 500;
+  margin: 5px;
+}
+
+.scoreboard span {
+  font-weight: 700;
 }
 
 @media (max-width: 600px) {
@@ -14,6 +24,11 @@
 
 @media (min-width: 601px) {
   /* common to tablets and desktops */
+  .scoreboard {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
