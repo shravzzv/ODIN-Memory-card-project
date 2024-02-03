@@ -1,9 +1,11 @@
 .card {
   border-radius: var(--common-bdr-radius);
   box-shadow: var(--common-box-shadow);
-  height: 300px;
+  height: 20vh;
   max-width: 100%;
+  background-size: cover;
   background-position: center;
+  background-color: var(--bg-clr-sec);
 }
 
 @media (max-width: 600px) {
@@ -14,6 +16,7 @@
   /* common to tablets and desktops */
   .card {
     cursor: pointer;
+    height: 50vh;
   }
 }
 

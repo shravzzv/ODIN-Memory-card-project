@@ -12,6 +12,8 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  background-color: var(--marvel-logo-red);
+  color: white;
 }
 
 .instructions {
@@ -22,17 +24,12 @@
   background-color: var(--bg-clr-sec);
   border-radius: var(--common-bdr-radius);
   box-shadow: var(--common-box-shadow);
+  max-width: 50vw;
 }
 
 .instructions p {
   padding: 10px;
   margin: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  .help button {
-    background-color: var(--marvel-logo-red);
-  }
 }
 
 @keyframes slideLeft {

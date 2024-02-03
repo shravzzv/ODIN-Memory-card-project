@@ -1,0 +1,23 @@
+.diffSelector {
+  padding: var(--common-padding);
+  border-radius: var(--common-bdr-radius);
+  box-shadow: var(--common-box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 0 auto;
+  background-color: var(--bg-clr-sec);
+}
+
+.diffSelector p {
+  font-weight: 500;
+}
+
+.levels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

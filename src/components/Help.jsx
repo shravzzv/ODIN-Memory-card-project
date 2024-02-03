@@ -27,8 +27,8 @@ export default function Help() {
     <div className='help'>
       {showInstructions && (
         <div className='instructions'>
-          <p>Don&apos;t click the same card twice.</p>
           <p>Win the game by clicking each card only once.</p>
+          <p>Click the logo to go back to home.</p>
         </div>
       )}
       <button onClick={handleClick}>?</button>

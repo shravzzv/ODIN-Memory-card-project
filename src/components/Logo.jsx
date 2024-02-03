@@ -1,13 +1,15 @@
 import '../styles/Logo.css'
 
-export default function Logo() {
+export default function Logo({ showHome, navigateHome }) {
   return (
     <div className='logo'>
       <img
-        src='/marvel_logo.png'
+        src='/marvel_logo.svg'
         alt='the marvel logo with white text against a red background'
+        className={!showHome ? 'inGAme' : ''}
+        onClick={navigateHome}
       />
-      <h1>Memory Game</h1>
+      {showHome && <h1>Memory Game</h1>}
     </div>
   )
 }

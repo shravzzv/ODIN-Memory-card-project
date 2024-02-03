@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react'
-import '../styles/Gallery.css'
 import Card from './Card'
+import '../styles/Gallery.css'
+import ResultDialog from './ResultDialog'
 import fisherYatesShuffle from '../utils/fisherYatesShuffle'
 
-export default function Gallery({ score, bestScore, setScore, setBestScore }) {
+export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   const [images, setImages] = useState([])
   const [clickedIds, setClickedIds] = useState([])
+  const [showDialog, setShowDialog] = useState(false)
+  const goal = images.length
 
   const handleClick = (e) => {
     const cardId = e.target.id
@@ -13,41 +16,89 @@ export default function Gallery({ score, bestScore, setScore, setBestScore }) {
     if (!clickedIds.includes(cardId)) {
       setScore((prevScore) => prevScore + 1)
       setClickedIds((prevData) => [...prevData, cardId])
+      if (goal - score > 1) {
+        // prevent shuffle if won
+        setImages((prevImages) => fisherYatesShuffle(prevImages))
+      }
     } else {
-      setScore(0)
-      score > bestScore && setBestScore(score)
-      setClickedIds([])
+      setShowDialog(true)
     }
+  }
 
-    setImages((prevImages) => fisherYatesShuffle(prevImages))
+  const handleRestart = () => {
+    setScore(0)
+    setBestScore((prevScore) => {
+      if (score == goal) return 0
+      if (score > prevScore) return score
+      return prevScore
+    })
+    setClickedIds([])
+    setShowDialog(false)
+    if (score !== goal) {
+      setImages((prevImages) => fisherYatesShuffle(prevImages))
+    } else fetchAndShuffle()
+  }
+
+  const fetchAndShuffle = () => {
+    fetch('/images.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(
+          fisherYatesShuffle(data).slice(
+            0,
+            difficulty == 'easy' ? 4 : difficulty == 'medium' ? 6 : 8
+          )
+        )
+      })
   }
 
   useEffect(() => {
-    // todo: replace local data with an API
-    setTimeout(() => {
-      fetch('/images.json')
-        .then((res) => res.json())
-        .then((data) => setImages(data))
-      // to emulate network fetching
-    }, 1000)
+    fetch('/images.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(
+          fisherYatesShuffle(data).slice(
+            0,
+            difficulty == 'easy' ? 4 : difficulty == 'medium' ? 6 : 8
+          )
+        )
+      })
+  }, [difficulty])
 
-    return () => {}
-  }, [])
+  useEffect(() => {
+    if (goal > 0 && score == goal) {
+      setShowDialog(true)
+    }
+  }, [score, goal])
 
   return (
-    <div className='gallery'>
-      {images.length > 0 ? (
-        images.map((image) => (
-          <Card
-            key={image.id}
-            id={image.id}
-            url={image.url}
-            handleClick={handleClick}
-          />
-        ))
-      ) : (
-        <p>Loading....</p>
-      )}
-    </div>
+    <>
+      <div className='gallery'>
+        {images.length > 0 ? (
+          images.map((image) => (
+            <Card
+              key={image.id}
+              id={image.id}
+              url={image.url}
+              title={image.title}
+              handleClick={handleClick}
+            />
+          ))
+        ) : (
+          <p>Loading....</p>
+        )}
+      </div>
+      <div className='progress'>
+        <progress value={clickedIds.length} max={goal}></progress>
+        <span>
+          <strong>{clickedIds.length}</strong>/{goal}
+        </span>
+      </div>
+      <ResultDialog
+        isWin={score == goal}
+        showDialog={showDialog}
+        handleRestart={handleRestart}
+      />
+    </>
   )
 }

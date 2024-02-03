@@ -1,11 +1,8 @@
 import '../styles/Scoreboard.css'
 
-export default function Scoreboard({ score, bestScore }) {
+export default function Scoreboard({ bestScore }) {
   return (
     <aside className='scoreboard'>
-      <p>
-        Current Score: <span>{score}</span>
-      </p>
       <p>
         Best Score: <span>{bestScore}</span>
       </p>
