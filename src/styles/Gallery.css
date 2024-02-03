@@ -10,7 +10,7 @@
 }
 
 .progress {
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,22 +18,35 @@
   font-weight: 700;
 }
 
-progress {
-  height: 40px;
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: none;
+  height: 20px;
+  width: 150px;
 }
 
-@media (max-width: 600px) {
-  /* phones only */
+progress[value]::-webkit-progress-bar {
+  border-radius: 20px;
+  background-color: var(--bg-clr-sec);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-@media (min-width: 601px) {
-  /* common to tablets and desktops */
+progress[value]::-webkit-progress-value {
+  border-radius: 20px;
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #09c, #f44);
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-  /* tablets only */
-}
-
-@media (min-width: 901px) {
-  /* large screens only */
-}
+/* progress style credit: https://css-tricks.com/html5-progress-element */
