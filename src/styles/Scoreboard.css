@@ -7,6 +7,9 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: var(--bg-clr-sec);
   margin-bottom: 20px;
+  background-image: url('/commonBG.webp');
+  background-size: cover;
+  color: white;
 }
 
 .scoreboard p {

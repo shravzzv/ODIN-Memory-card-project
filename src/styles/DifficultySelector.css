@@ -9,10 +9,13 @@
   width: max-content;
   margin: 0 auto;
   background-color: var(--bg-clr-sec);
+  background-image: url('/commonBG.webp');
+  background-size: cover;
 }
 
 .diffSelector p {
-  font-weight: 500;
+  font-weight: 600;
+  color: white;
 }
 
 .levels {

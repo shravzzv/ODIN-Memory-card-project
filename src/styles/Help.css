@@ -25,6 +25,11 @@
   border-radius: var(--common-bdr-radius);
   box-shadow: var(--common-box-shadow);
   max-width: 50vw;
+  font-weight: 500;
+  background-color: var(--marvel-logo-red);
+  background-image: url('/commonBG.webp');
+  background-size: cover;
+  color: white;
 }
 
 .instructions p {
