@@ -3,6 +3,7 @@ import Card from './Card'
 import '../styles/Gallery.css'
 import ResultDialog from './ResultDialog'
 import fisherYatesShuffle from '../utils/fisherYatesShuffle'
+import Spinner from './Spinner'
 
 export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   const [images, setImages] = useState([])
@@ -53,16 +54,18 @@ export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   }
 
   useEffect(() => {
-    fetch('/images.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(
-          fisherYatesShuffle(data).slice(
-            0,
-            difficulty == 'easy' ? 4 : difficulty == 'medium' ? 6 : 8
+    setTimeout(() => {
+      fetch('/images.json')
+        .then((res) => res.json())
+        .then((data) => {
+          setImages(
+            fisherYatesShuffle(data).slice(
+              0,
+              difficulty == 'easy' ? 4 : difficulty == 'medium' ? 6 : 8
+            )
           )
-        )
-      })
+        })
+    }, 5000)
   }, [difficulty])
 
   useEffect(() => {
@@ -71,27 +74,27 @@ export default function Gallery({ score, setScore, setBestScore, difficulty }) {
     }
   }, [score, goal])
 
+  if (images.length < 1) {
+    return <Spinner />
+  }
+
   return (
     <>
       <div className='gallery'>
-        {images.length > 0 ? (
-          images.map((image) => (
-            <Card
-              key={image.id}
-              id={image.id}
-              url={image.url}
-              title={image.title}
-              handleClick={handleClick}
-            />
-          ))
-        ) : (
-          <p>Loading....</p>
-        )}
+        {images.map((image) => (
+          <Card
+            key={image.id}
+            id={image.id}
+            url={image.url}
+            title={image.title}
+            handleClick={handleClick}
+          />
+        ))}
       </div>
       <div className='progress'>
         <progress value={clickedIds.length} max={goal}></progress>
         <span>
-          <strong>{clickedIds.length}</strong>/{goal}
+          <strong className='currentScore'>{clickedIds.length}</strong>/{goal}
         </span>
       </div>
       <ResultDialog
