@@ -4,7 +4,6 @@ import '../styles/Gallery.css'
 import ResultDialog from './ResultDialog'
 import fisherYatesShuffle from '../utils/fisherYatesShuffle'
 import Spinner from './Spinner'
-import Spinner from './Spinner'
 
 export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   const [images, setImages] = useState([])

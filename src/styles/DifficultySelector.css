@@ -9,7 +9,7 @@
   width: max-content;
   margin: 0 auto;
   background-color: var(--bg-clr-sec);
-  background-image: url('/commonBG.webp');
+  background-image: url('/backgrounds/commonBG.webp');
   background-size: cover;
 }
 

@@ -27,7 +27,7 @@
   max-width: 50vw;
   font-weight: 500;
   background-color: var(--marvel-logo-red);
-  background-image: url('/commonBG.webp');
+  background-image: url('/backgrounds/commonBG.webp');
   background-size: cover;
   color: white;
 }

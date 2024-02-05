@@ -18,11 +18,11 @@ dialog {
 }
 
 dialog.win {
-  background-image: url('/winBG.webp');
+  background-image: url('/backgrounds/winBG.webp');
 }
 
 dialog.loss {
-  background-image: url('/lossBG.webp');
+  background-image: url('/backgrounds/lossBG.webp');
 }
 
 dialog h2 {

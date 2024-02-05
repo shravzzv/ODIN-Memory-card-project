@@ -34,7 +34,7 @@
 .card__face--back {
   transform: rotateY(180deg);
   background-color: var(--marvel-logo-red);
-  background-image: url('/marvelCardBG.webp');
+  background-image: url('/backgrounds/marvelCardBG.webp');
 }
 
 @media (min-width: 601px) {
