@@ -9,17 +9,24 @@ export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   const [images, setImages] = useState([])
   const [clickedIds, setClickedIds] = useState([])
   const [showDialog, setShowDialog] = useState(false)
+  const [flipCards, setFlipCards] = useState(false)
   const goal = images.length
 
   const handleClick = (e) => {
-    const cardId = e.target.id
+    const cardId = e.target.dataset.id
 
     if (!clickedIds.includes(cardId)) {
       setScore((prevScore) => prevScore + 1)
       setClickedIds((prevData) => [...prevData, cardId])
       if (goal - score > 1) {
-        // prevent shuffle if won
-        setImages((prevImages) => fisherYatesShuffle(prevImages))
+        // prevent shuffle and flip if won
+        setFlipCards(true)
+        setTimeout(() => {
+          setImages((prevImages) => fisherYatesShuffle(prevImages))
+        }, 1000)
+        setTimeout(() => {
+          setFlipCards(false)
+        }, 2000)
       }
     } else {
       setShowDialog(true)
@@ -86,6 +93,7 @@ export default function Gallery({ score, setScore, setBestScore, difficulty }) {
             url={image.url}
             title={image.title}
             handleClick={handleClick}
+            flipCards={flipCards}
           />
         ))}
       </div>
