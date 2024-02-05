@@ -9,10 +9,33 @@ dialog {
   border: none;
   width: min(80vw, 700px);
   text-align: center;
-  padding: 40px 0;
   animation: growIn 300ms ease-in-out;
   background-color: var(--bg-clr-sec);
   color: inherit;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+}
+
+dialog.win {
+  background-image: url('/backgrounds/winBG.webp');
+}
+
+dialog.loss {
+  background-image: url('/backgrounds/lossBG.webp');
+}
+
+dialog h2 {
+  color: white;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
 }
 
 @keyframes growIn {
@@ -24,4 +47,23 @@ dialog {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+@media (max-width: 600px) {
+  /* phones only */
+}
+
+@media (min-width: 601px) {
+  /* common to tablets and desktops */
+  dialog {
+    height: 50vh;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* tablets only */
+}
+
+@media (min-width: 901px) {
+  /* large screens only */
 }

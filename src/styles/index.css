@@ -27,6 +27,10 @@
     --bg-clr-sec: #242424;
     --accent-clr: #121212;
   }
+
+  img {
+    filter: brightness(0.8) contrast(1.2);
+  }
 }
 
 body {

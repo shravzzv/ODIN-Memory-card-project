@@ -1,43 +1,36 @@
 # Memory Game
 
-![Project screenshot](https://)
-[Project demo](https://)
+[Project demo](https://odin-memory-card-game.vercel.app/)
 
 ## Description
 
 Challenge your memory with this interactive game. Click each card only once to reveal its hidden content. Test your recall skills and aim to match all pairs. Play now for a fun and engaging experience!
 
-Briefly describe your project here. What does it do? Why is it useful?
-[Project Source](https://)
+This project was an [assignment](https://www.theodinproject.com/lessons/node-path-react-new-memory-card) from The Odin Project.
 
 ## Features
 
-- Clearly list the key features of your project.
-- Be concise and informative.
+- Many characters to play with.
+- Different levels to choose from: easy, medium and difficult.
+- Responsive design.
+- Adapts to the device theme.
 
 ## Technologies Used
 
 - List the technologies and languages you used in your project, e.g., JavaScript, HTML, CSS, etc.
 
-<!-- Change the ?i=js,html,css to a list of your skills seprated by ','! You can find a full list of icons [here](https://github.com/tandpfun/skill-icons#icons-list). -->
-
-[![My Skills](https://skillicons.dev/icons?i=babel,bash,css,express,figma,git,github,html,js,jest,md,mongodb,netlify,nextjs,nodejs,postgres,postman,react,sass,ts,vercel,vscode,webpack)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,bash,css,git,github,html,vercel,vscode)](https://skillicons.dev)
 
 ## Installation
 
 To install the project, follow these steps:
 
 ```bash
-git clone [repository_link]
-cd project-folder
-install project
+git clone https://github.com/shravzzv/ODIN-Memory-card-project
+cd ODIN-Memory-card-project
+npm install
+npm run dev
 ```
-
-Replace `[repository_link]` with the actual link to your repository.
-
-## Usage
-
-Explain how to use your project, provide examples if possible.
 
 ## How to Contribute
 
@@ -48,7 +41,7 @@ If you'd like to contribute, follow these steps:
 
    ```bash
    git clone [your_forked_repository_link]
-   cd project-folder
+   cd ODIN-Memory-card-project
    ```
 
 3. Create a new branch for your feature or bug fix.
@@ -69,9 +62,7 @@ If you'd like to contribute, follow these steps:
 
 ## Issue Tracker
 
-Find a bug or want to request a new feature? Please let us know by submitting an issue.
-
-- [Issue Tracker](https://github.com/project/project/issues)
+Find a bug or want to request a new feature? Please submit an [issue](https://github.com/shravzzv/ODIN-Memory-card-project/issues).
 
 ## License
 
