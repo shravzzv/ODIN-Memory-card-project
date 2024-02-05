@@ -50,3 +50,8 @@ progress[value]::-webkit-progress-value {
 }
 
 /* progress style credit: https://css-tricks.com/html5-progress-element */
+
+.currentScore {
+  color: var(--marvel-logo-red);
+  font-size: 1.2rem;
+}
