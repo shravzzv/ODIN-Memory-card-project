@@ -4,6 +4,7 @@ import '../styles/Gallery.css'
 import ResultDialog from './ResultDialog'
 import fisherYatesShuffle from '../utils/fisherYatesShuffle'
 import Spinner from './Spinner'
+import Spinner from './Spinner'
 
 export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   const [images, setImages] = useState([])
@@ -61,16 +62,18 @@ export default function Gallery({ score, setScore, setBestScore, difficulty }) {
   }
 
   useEffect(() => {
-    fetch('/images.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(
-          fisherYatesShuffle(data).slice(
-            0,
-            difficulty == 'easy' ? 4 : difficulty == 'medium' ? 6 : 8
+    setTimeout(() => {
+      fetch('/images.json')
+        .then((res) => res.json())
+        .then((data) => {
+          setImages(
+            fisherYatesShuffle(data).slice(
+              0,
+              difficulty == 'easy' ? 4 : difficulty == 'medium' ? 6 : 8
+            )
           )
-        )
-      })
+        })
+    }, 5000)
   }, [difficulty])
 
   useEffect(() => {
